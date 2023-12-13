@@ -10,7 +10,7 @@ const shopPage = require("./routes/shop");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(adminPage);
+app.use("/admin", adminPage);
 app.use(shopPage);
 
 app.use((req, res, next) => {
