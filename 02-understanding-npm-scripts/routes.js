@@ -23,12 +23,12 @@ const requestHandler = (req, res) => {
       fs.writeFile("message.txt", message, (err) => {
         res.statusCode = 302;
         res.setHeader("Location", "/");
+        console.log(message);
         return res.end();
       });
-      console.log(message);
     });
   }
-  
+
   res.setHeader("Content-Type", "text/html");
   res.write("<html>");
   res.write("<head><title>My First Page</title><head>");
