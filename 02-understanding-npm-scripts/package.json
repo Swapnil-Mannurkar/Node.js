@@ -1,0 +1,12 @@
+{
+  "name": "02-understanding-npm-scripts",
+  "version": "1.0.0",
+  "description": "Node.js course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Swapnil Mannurkar",
+  "license": "ISC"
+}
