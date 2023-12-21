@@ -1,1 +1,16 @@
-[{"title":"A Book","imageUrl":"https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg","description":"This is an awesome book!","price":"19"}]
+[
+  {
+    "id": "12345",
+    "title": "A Book",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpotWxtMG9mld21UAR4v5z-8A8vZodVzEZsw&usqp=CAU",
+    "description": "This is an awesome book!",
+    "price": "19"
+  },
+  {
+    "title": "Open book",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpotWxtMG9mld21UAR4v5z-8A8vZodVzEZsw&usqp=CAU",
+    "description": "A open book.",
+    "price": "9.99",
+    "id": "0.3771485056895636"
+  }
+]
