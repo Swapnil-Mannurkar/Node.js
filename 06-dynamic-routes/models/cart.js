@@ -3,16 +3,6 @@ const path = require("path");
 
 const p = path.join(path.dirname(require.main.filename), "data", "cart.json");
 
-const getProductsFromFile = (cb) => {
-  fs.readFile(p, (err, fileContent) => {
-    if (err) {
-      cb([]);
-    } else {
-      cb(JSON.parse(fileContent));
-    }
-  });
-};
-
 let cart = { products: [], totalPrice: 0 };
 
 module.exports = class Cart {
@@ -45,7 +35,13 @@ module.exports = class Cart {
   }
 
   static fetchCart(cb) {
-    getProductsFromFile(cb);
+    fs.readFile(p, (err, fileContent) => {
+      if (err) {
+        cb(null);
+      } else {
+        cb(JSON.parse(fileContent));
+      }
+    });
   }
 
   static deleteProduct(id, productPrice) {
@@ -55,14 +51,16 @@ module.exports = class Cart {
       const cart = JSON.parse(fileContent);
       const updatedCart = { ...cart };
       const product = updatedCart.products.find((product) => product.id === id);
+      if (!product) {
+        return;
+      }
       const productQty = product.qty;
 
       updatedCart.products = updatedCart.products.filter(
         (product) => product.id !== id
       );
-      updatedCart.totalPrice -= productPrice * productQty;
-
-      // if (updatedCart.totalPrice < 0) updatedCart.totalPrice = 0;
+      updatedCart.totalPrice =
+        updatedCart.totalPrice - productPrice * productQty;
 
       fs.writeFile(p, JSON.stringify(updatedCart), (err) => {});
     });
