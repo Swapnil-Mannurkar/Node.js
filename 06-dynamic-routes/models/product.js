@@ -59,4 +59,13 @@ module.exports = class Product {
       fs.writeFile(p, JSON.stringify(products), (err) => {});
     });
   }
+
+  static removeProduct(prodId) {
+    fs.readFile(p, (err, fileContent) => {
+      let products = JSON.parse(fileContent);
+      products = products.filter((product) => product.id !== prodId);
+
+      fs.writeFile(p, JSON.stringify(products), (err) => {});
+    });
+  }
 };
