@@ -29,9 +29,7 @@ module.exports = class Product {
     this.id = Math.random().toString();
     getProductsFromFile((products) => {
       products.push(this);
-      fs.writeFile(p, JSON.stringify(products), (err) => {
-        console.log(err);
-      });
+      fs.writeFile(p, JSON.stringify(products), (err) => {});
     });
   }
 
@@ -43,6 +41,22 @@ module.exports = class Product {
     getProductsFromFile((products) => {
       const product = products.find((p) => p.id === id);
       cb(product);
+    });
+  }
+
+  static updateProduct(updatedProduct) {
+    fs.readFile(p, (err, fileContent) => {
+      let products = JSON.parse(fileContent);
+
+      let existingProductIndex = products.findIndex(
+        (product) => product.id === updatedProduct.id
+      );
+
+      let existingProduct = products[existingProductIndex];
+
+      products[existingProductIndex] = updatedProduct;
+
+      fs.writeFile(p, JSON.stringify(products), (err) => {});
     });
   }
 };

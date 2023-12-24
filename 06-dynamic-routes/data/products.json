@@ -1,16 +1,1 @@
-[
-  {
-    "id": "12345",
-    "title": "A Book",
-    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpotWxtMG9mld21UAR4v5z-8A8vZodVzEZsw&usqp=CAU",
-    "description": "This is an awesome book!",
-    "price": "19"
-  },
-  {
-    "title": "Open book",
-    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpotWxtMG9mld21UAR4v5z-8A8vZodVzEZsw&usqp=CAU",
-    "description": "A open book.",
-    "price": "9.99",
-    "id": "0.3771485056895636"
-  }
-]
+[{"id":"12345","title":"A stack Book","imageUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpotWxtMG9mld21UAR4v5z-8A8vZodVzEZsw&usqp=CAU","description":"  This is an awesome book!","price":"19.99"},{"id":"0.3771485056895636","title":"Red and blue books","imageUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpotWxtMG9mld21UAR4v5z-8A8vZodVzEZsw&usqp=CAU","description":" A open book.","price":"9.99"}]
