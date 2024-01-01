@@ -13,7 +13,14 @@ exports.postLogin = (req, res, next) => {
     .then((user) => {
       req.session.loggedIn = true;
       req.session.user = user;
-      res.redirect("/login");
+      res.redirect("/");
     })
     .catch((err) => console.log(err));
+};
+
+exports.postLogout = (req, res, next) => {
+  req.session.destroy((err) => {
+    console.log(err);
+    res.redirect("/login");
+  });
 };
