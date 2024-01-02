@@ -1,4 +1,5 @@
 const bcrypt = require("bcryptjs");
+// const mailtrap = require("mailtrap").MailtrapClient;
 
 const User = require("../models/user");
 
@@ -48,6 +49,16 @@ exports.postLogin = (req, res, next) => {
             return req.session.save((err) => {
               console.log(err);
               res.redirect("/");
+              // const client = new mailtrap({
+              //   token: "a7503a1f6a463972340d451be9f0c620",
+              // });
+
+              // client.send({
+              //   from: { email: "swapnil@nodejscourse.com" },
+              //   to: [{ email: email }],
+              //   subject: "Logged In",
+              //   text: "You have been logged in successfully!",
+              // });
             });
           }
           req.flash("error", "Invalid email or password.");
